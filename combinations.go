@@ -1,5 +1,6 @@
-package  itertools
+package itertools
 
+//List is a list of elements of any kind/type
 type List []interface{}
 
 //GenCombinations generates, from two natural numbers n > r,
@@ -25,9 +26,9 @@ func GenCombinations(n, r int) <-chan []int {
 		ch <- temp
 
 		for {
-			for i := r - 1; i >= 0; i -= 1 {
+			for i := r - 1; i >= 0; i-- {
 				if result[i] < i+n-r {
-					result[i] += 1
+					result[i]++
 					for j := 1; j < r-i; j++ {
 						result[i+j] = result[i] + j
 					}
@@ -47,6 +48,8 @@ func GenCombinations(n, r int) <-chan []int {
 	return ch
 }
 
+//CombinationsInt generates all the combinations of r elements
+//extracted from an slice of integers
 func CombinationsInt(iterable []int, r int) chan []int {
 
 	ch := make(chan []int)
@@ -68,6 +71,8 @@ func CombinationsInt(iterable []int, r int) chan []int {
 	return ch
 }
 
+//CombinationsStr generates all the combinations of r elements
+//extracted from an slice of strings
 func CombinationsStr(iterable []string, r int) chan []string {
 
 	ch := make(chan []string)
@@ -89,6 +94,10 @@ func CombinationsStr(iterable []string, r int) chan []string {
 	return ch
 }
 
+//CombinationsList generates all the combinations of r elements
+//extracted from a List (an arbitrary list of elements).
+//A List can be created for instance, as follows
+//myList := List{"a", "b", 13, 3.523}
 func CombinationsList(iterable List, r int) chan List {
 
 	ch := make(chan List)
