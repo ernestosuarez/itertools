@@ -1,10 +1,5 @@
 package  itertools
 
-import (
-	"flag"
-	"fmt"
-)
-
 //GenPermutations generates, given a number n,
 //all the n factorial permutations of the integers
 //from 0 to n-1
@@ -72,7 +67,6 @@ func GenPermutations(n int) <-chan []int {
 	}()
 	return ch
 }
-
 
 func PermutationsInt(iterable []int, r int) chan []int {
 

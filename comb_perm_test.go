@@ -1,4 +1,4 @@
-package  itertools_test
+package  itertools
 
 import (
 	"flag"
@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+//TestCombPerm is just for testing
+//the itertools package
 func TestCombPerm(t *testing.T) {
 	n := flag.Int("n", 7, "total number of elments")
 	r := flag.Int("r", 3, "Number of elements to select")

@@ -1,10 +1,5 @@
 package  itertools
 
-import (
-	"flag"
-	"fmt"
-)
-
 type List []interface{}
 
 //GenCombinations generates, from two natural numbers n > r,
@@ -114,4 +109,3 @@ func CombinationsList(iterable List, r int) chan List {
 	}()
 	return ch
 }
-
