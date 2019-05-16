@@ -138,4 +138,4 @@ Same as in combinations, fist define the new type List (see above) and then use 
 
 ## Contributions
 
-Contributions are welcome.
+Contributions are welcome!
